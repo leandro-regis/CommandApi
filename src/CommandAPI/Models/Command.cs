@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
 namespace CommandAPI.Models
@@ -17,6 +13,6 @@ namespace CommandAPI.Models
     [Required]
     public string Platform { get; set; }
     [Required]
-    public string CommadLine { get; set; }
+    public string CommandLine { get; set; }
   }
 }
