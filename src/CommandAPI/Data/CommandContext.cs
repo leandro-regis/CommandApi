@@ -12,5 +12,7 @@ namespace CommandAPI.Data
     public CommandContext(DbContextOptions<CommandContext> options) : base(options)
     { }
     public DbSet<Command> CommandItems { get; set; }
+
+
   }
 }
