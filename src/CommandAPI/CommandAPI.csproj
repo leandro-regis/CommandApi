@@ -1,9 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>ac5a26c9-1f5b-493f-8fa5-fdfbfa79da63</UserSecretsId>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.design" Version="5.0">
@@ -12,5 +11,4 @@
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0" />
   </ItemGroup>
-
 </Project>

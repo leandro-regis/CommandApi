@@ -6,6 +6,7 @@ using CommandAPI.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,9 +24,13 @@ namespace CommandAPI
       Configuration = configuration;
 
     }
+    //Server=.;Database=CmdApi;Trusted_Connection=True;
     public void ConfigureServices(IServiceCollection services)
     {
-      services.AddDbContext<CommandContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+      var builder = new SqlConnectionStringBuilder();
+      builder.ConnectionString = Configuration["DefaultConnection"];
+
+      services.AddDbContext<CommandContext>(options => options.UseSqlServer(builder.ConnectionString));
       services.AddControllers();
       // services.AddScoped<ICommandAPIRepo, MockCommandAPIRepo>();
       services.AddScoped<ICommandAPIRepo, SqlCommandAPIRepo>();
